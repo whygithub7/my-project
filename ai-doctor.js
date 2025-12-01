@@ -600,12 +600,13 @@
         widgetContainer.id = 'ai-doctor-widget';
         widgetContainer.innerHTML = `
             <button id="ai-doctor-btn">
-                <i data-lucide="stethoscope"></i> Consult Doctor
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v6"/><path d="M11 3v5a6 6 0 0 1-6 6v0a6 6 0 0 1-6-6V4a2 2 0 0 1 2-2h1a.2.2 0 1 1 .3.3"/><circle cx="12" cy="21" r="3"/></svg>
+                Consult Doctor
             </button>
             
             <div id="ai-doctor-modal">
                 <div id="ai-matching-overlay" class="hidden">
-                    <i data-lucide="heart-pulse" class="pulse-heart"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pulse-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
                     <h3 id="match-title" style="margin-top: 20px; color: #1e293b;">Connecting...</h3>
                     <p id="match-status" style="color: #64748b; font-size: 14px;">Finding the best specialist for you</p>
                     <div class="progress-bar"><div class="progress-fill" id="match-progress"></div></div>
@@ -618,7 +619,7 @@
                         <p id="doc-spec">Cardiologist</p>
                     </div>
                     <div class="ai-close" id="ai-close-btn">
-                        <i data-lucide="x"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                     </div>
                 </div>
                 
@@ -631,7 +632,9 @@
                     <div class="ai-typing" id="ai-typing-indicator">Doctor is typing...</div>
                     <div class="ai-input-wrapper">
                         <input type="text" id="ai-input" placeholder="Type your symptoms...">
-                        <button id="ai-send-btn"><i data-lucide="send"></i></button>
+                        <button id="ai-send-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -645,8 +648,6 @@
         document.getElementById('ai-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
         });
-
-        if (window.lucide) window.lucide.createIcons();
     }
 
     // --- LOGIC ---
